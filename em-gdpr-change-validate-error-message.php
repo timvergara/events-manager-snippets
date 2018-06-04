@@ -6,7 +6,7 @@
  * @param EM_Booking $EM_Booking
  * @return bool
  */
-function theme_custom_em_data_privacy_consent_booking_validate( $result, $EM_Booking ){
+function em_snippet_data_privacy_consent_booking_validate( $result, $EM_Booking ){
 	
 	if( is_user_logged_in() ){
 		//check if consent was previously given and ignore if settings dictate so
@@ -20,14 +20,14 @@ function theme_custom_em_data_privacy_consent_booking_validate( $result, $EM_Boo
     return $result;
 }
 
-function theme_custom_em_data_privacy_consent_hooks(){
+function em_snippet_data_privacy_consent_hooks(){
 	//BOOKINGS
 	if( get_option( 'dbem_data_privacy_consent_bookings' ) == 1 || ( get_option( 'dbem_data_privacy_consent_bookings' ) == 2 && !is_user_logged_in() ) ){
 		remove_filter( 'em_booking_validate', 'em_data_privacy_consent_booking_validate', 10, 2 );
-		add_filter( 'em_booking_validate', 'theme_custom_em_data_privacy_consent_booking_validate', 10, 2 );
+		add_filter( 'em_booking_validate', 'em_snippet_data_privacy_consent_booking_validate', 10, 2 );
 	}
 }
 
-add_action( 'init', 'theme_custom_em_data_privacy_consent_hooks' );
+add_action( 'init', 'em_snippet_data_privacy_consent_hooks' );
 
 ?>
