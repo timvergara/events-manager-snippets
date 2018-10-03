@@ -1,10 +1,10 @@
 <?php 
 
 /*
-	* my_em_booking_wp_name_placeholders
-	* Adds custom placeholder to display the WordPress display name.
-	* #_BOOKINGWPNAME
-	* It would display the #_BOOKINGNAME if there is no display name or user is not logged-in
+  * my_em_booking_wp_name_placeholders
+  * Adds custom placeholder to display the WordPress display name.
+  * #_BOOKINGWPNAME
+  * It would display the #_BOOKINGNAME if there is no display name or user is not logged-in
   * @param $replace
   * @param $EM_Event
   * @param $result
